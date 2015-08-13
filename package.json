@@ -17,7 +17,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "prepublish": "browserify -o browser.js -e index.js -s index --bare"
   },
   "dependencies": {},
   "devDependencies": {
