@@ -1,0 +1,49 @@
+{
+  "name": "define-property",
+  "description": "Define a non-enumerable property on an object.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/define-property",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/define-property",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/define-property/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": [
+    "define",
+    "define-property",
+    "enumerable",
+    "key",
+    "non",
+    "non-enumerable",
+    "object",
+    "prop",
+    "property",
+    "value"
+  ],
+  "verb": {
+    "related": {
+      "list": [
+        "mixin-deep",
+        "mixin-object",
+        "delegate-object",
+        "forward-object"
+      ]
+    }
+  }
+}
