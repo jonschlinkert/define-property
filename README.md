@@ -1,6 +1,6 @@
 # define-property [![NPM version](https://badge.fury.io/js/define-property.svg)](http://badge.fury.io/js/define-property)
 
-> Convenience for defining a non-enumberable property on an object.
+> Define a non-enumerable property on an object.
 
 ## Install
 
