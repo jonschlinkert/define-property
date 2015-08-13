@@ -7,8 +7,8 @@
 
 'use strict';
 
-module.exports = function define(obj, key, val) {
-  if (typeof obj !== 'object') {
+module.exports = function defineProperty(receiver, key, val) {
+  if (typeof receiver !== 'object') {
     throw new TypeError('expected an object.');
   }
 
@@ -16,7 +16,7 @@ module.exports = function define(obj, key, val) {
     throw new TypeError('expected `key` to be a string.');
   }
 
-  Object.defineProperty(obj, key, {
+  return Object.defineProperty(receiver, key, {
     configurable: true,
     enumerable: false,
     writable: true,
