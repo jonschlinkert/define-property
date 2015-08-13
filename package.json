@@ -1,7 +1,7 @@
 {
   "name": "define-property",
   "description": "Define a non-enumerable property on an object.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/jonschlinkert/define-property",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/define-property",
@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "files": [
+    "browser.js",
     "index.js"
   ],
   "main": "index.js",
