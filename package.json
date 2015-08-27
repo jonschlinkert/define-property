@@ -1,7 +1,7 @@
 {
   "name": "define-property",
   "description": "Define a non-enumerable property on an object.",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "homepage": "https://github.com/jonschlinkert/define-property",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/define-property",
@@ -10,7 +10,6 @@
   },
   "license": "MIT",
   "files": [
-    "browser.js",
     "index.js"
   ],
   "main": "index.js",
@@ -18,13 +17,11 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha",
-    "prepublish": "browserify -o browser.js -e index.js -s index --bare"
+    "test": "mocha"
   },
-  "dependencies": {},
   "devDependencies": {
     "mocha": "*",
-    "should": "*"
+    "should": "^7.0.4"
   },
   "keywords": [
     "define",
