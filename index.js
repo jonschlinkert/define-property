@@ -16,6 +16,10 @@ module.exports = function defineProperty(receiver, key, val) {
     throw new TypeError('expected `key` to be a string.');
   }
 
+  if ('set' in val || 'get' in val) {
+    return Object.defineProperty(receiver, key, val);
+  }
+
   return Object.defineProperty(receiver, key, {
     configurable: true,
     enumerable: false,
