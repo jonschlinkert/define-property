@@ -8,8 +8,8 @@
 'use strict';
 
 module.exports = function defineProperty(receiver, key, val) {
-  if (typeof receiver !== 'object') {
-    throw new TypeError('expected an object.');
+  if (typeof receiver !== 'object' && typeof receiver !== 'function') {
+    throw new TypeError('expected an object or function.');
   }
 
   if (typeof key !== 'string') {

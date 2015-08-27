@@ -18,7 +18,7 @@ describe('define', function () {
   it('should throw an error when invalid args are passed:', function () {
     (function () {
       define();
-    }).should.throw('expected an object.');
+    }).should.throw('expected an object or function.');
 
     (function () {
       define({});
