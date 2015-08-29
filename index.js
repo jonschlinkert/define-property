@@ -17,7 +17,14 @@ module.exports = function defineProperty(receiver, key, val) {
   }
 
   if (typeof val === 'object' && ('set' in val || 'get' in val)) {
-    return Object.defineProperty(receiver, key, val);
+    var keys = [], i = 0;
+    for (var k in val) {
+      i++;
+      keys.push(k);
+    }
+    if (i >= 1 && i <= 4) {
+      return Object.defineProperty(receiver, key, val);
+    }
   }
 
   return Object.defineProperty(receiver, key, {
