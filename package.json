@@ -1,7 +1,7 @@
 {
   "name": "define-property",
   "description": "Define a non-enumerable property on an object.",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "homepage": "https://github.com/jonschlinkert/define-property",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/define-property",
@@ -44,5 +44,8 @@
         "forward-object"
       ]
     }
+  },
+  "dependencies": {
+    "is-descriptor": "^0.1.0"
   }
 }
