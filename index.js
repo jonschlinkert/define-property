@@ -7,27 +7,22 @@
 
 'use strict';
 
-module.exports = function defineProperty(receiver, key, val) {
-  if (typeof receiver !== 'object' && typeof receiver !== 'function') {
+var isDescriptor = require('is-descriptor');
+
+module.exports = function defineProperty(obj, prop, val) {
+  if (typeof obj !== 'object' && typeof obj !== 'function') {
     throw new TypeError('expected an object or function.');
   }
 
-  if (typeof key !== 'string') {
-    throw new TypeError('expected `key` to be a string.');
+  if (typeof prop !== 'string') {
+    throw new TypeError('expected `prop` to be a string.');
   }
 
-  if (typeof val === 'object' && ('set' in val || 'get' in val)) {
-    var keys = [], i = 0;
-    for (var k in val) {
-      i++;
-      keys.push(k);
-    }
-    if (i >= 1 && i <= 4) {
-      return Object.defineProperty(receiver, key, val);
-    }
+  if (isDescriptor(val) && ('set' in val || 'get' in val)) {
+    return Object.defineProperty(obj, prop, val);
   }
 
-  return Object.defineProperty(receiver, key, {
+  return Object.defineProperty(obj, prop, {
     configurable: true,
     enumerable: false,
     writable: true,
