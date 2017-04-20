@@ -19,9 +19,12 @@
   "scripts": {
     "test": "mocha"
   },
+  "dependencies": {
+    "is-descriptor": "^1.0.0"
+  },
   "devDependencies": {
-    "mocha": "*",
-    "should": "^7.0.4"
+    "gulp-format-md": "^0.1.12",
+    "mocha": "^3.2.0"
   },
   "keywords": [
     "define",
@@ -38,14 +41,22 @@
   "verb": {
     "related": {
       "list": [
-        "mixin-deep",
-        "mixin-object",
-        "delegate-object",
-        "forward-object"
+        "assign-deep",
+        "extend-shallow",
+        "merge-deep",
+        "mixin-deep"
       ]
+    },
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
     }
-  },
-  "dependencies": {
-    "is-descriptor": "^0.1.0"
   }
 }
