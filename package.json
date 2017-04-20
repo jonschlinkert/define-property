@@ -1,7 +1,7 @@
 {
   "name": "define-property",
   "description": "Define a non-enumerable property on an object.",
-  "version": "0.2.5",
+  "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/define-property",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/define-property",
@@ -41,9 +41,9 @@
   "verb": {
     "related": {
       "list": [
-        "assign-deep",
         "extend-shallow",
         "merge-deep",
+        "assign-deep",
         "mixin-deep"
       ]
     },
