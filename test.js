@@ -1,12 +1,11 @@
 'use strict';
 
-/* deps: mocha */
+require('mocha');
 var assert = require('assert');
-var should = require('should');
 var define = require('./');
 
-describe('define', function () {
-  it('should define a property and make it non-enumerable:', function () {
+describe('define', function() {
+  it('should define a property and make it non-enumerable:', function() {
     var obj = {};
     define(obj, 'foo', function(val) {
       return val.toUpperCase();
@@ -16,7 +15,7 @@ describe('define', function () {
     assert.equal(obj.foo('bar'), 'BAR');
   });
 
-  it('should allow any arbitrary value to be assigned:', function () {
+  it('should allow any arbitrary value to be assigned:', function() {
     var obj = {};
     define(obj, 'foo', null);
     define(obj, 'bar');
@@ -26,7 +25,7 @@ describe('define', function () {
     assert.deepEqual(obj.baz, {});
   });
 
-  it('should define a property with accessor descriptors:', function () {
+  it('should define a property with accessor descriptors:', function() {
     var obj = {bar: 'baz'};
     define(obj, 'foo', {
       configurable: true,
@@ -41,13 +40,13 @@ describe('define', function () {
     assert.equal(obj.foo, 'baz');
   });
 
-  it('should throw an error when invalid args are passed:', function () {
-    (function () {
+  it('should throw an error when invalid args are passed:', function() {
+    assert.throws(function() {
       define();
-    }).should.throw('expected an object or function.');
+    }, /expected an object or function/);
 
-    (function () {
+    assert.throws(function() {
       define({});
-    }).should.throw('expected `prop` to be a string.');
+    }, /expected `prop` to be a string/);
   });
 });
