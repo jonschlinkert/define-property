@@ -40,13 +40,42 @@ describe('define', function() {
     assert.equal(obj.foo, 'baz');
   });
 
+  it('should define a property on a function', function() {
+    function fixture() {}
+    fixture.bar = 'baz';
+    define(fixture, 'foo', {
+      configurable: true,
+      set: function(key) {
+        define(this, '_val', this[key]);
+      },
+      get: function() {
+        return this._val;
+      }
+    });
+    fixture.foo = 'bar';
+    assert.equal(fixture.foo, 'baz');
+  });
+
+  it('should define a property with data descriptors:', function() {
+    var obj = {};
+    define(obj, 'foo', {
+      writable: true,
+      value: 'bar'
+    });
+    assert.equal(obj.foo, 'bar');
+  });
+
   it('should throw an error when invalid args are passed:', function() {
+    assert.throws(function() {
+      define(null, 'foo');
+    }, /expected an object or function/);
+
     assert.throws(function() {
       define();
     }, /expected an object or function/);
 
     assert.throws(function() {
       define({});
-    }, /expected `prop` to be a string/);
+    }, /expected "key" to be a string/);
   });
 });

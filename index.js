@@ -7,25 +7,32 @@
 
 'use strict';
 
+var typeOf = require('kind-of');
 var isDescriptor = require('is-descriptor');
+var define = (typeof Reflect !== 'undefined' && Reflect.defineProperty)
+  ? Reflect.defineProperty
+  : Object.defineProperty;
 
-module.exports = function defineProperty(obj, prop, val) {
-  if (typeof obj !== 'object' && typeof obj !== 'function') {
-    throw new TypeError('expected an object or function.');
+module.exports = function defineProperty(obj, key, val) {
+  if (typeOf(obj) !== 'object' && typeof obj !== 'function') {
+    throw new TypeError('expected an object or function');
   }
 
-  if (typeof prop !== 'string') {
-    throw new TypeError('expected `prop` to be a string.');
+  if (typeof key !== 'string') {
+    throw new TypeError('expected "key" to be a string');
   }
 
-  if (isDescriptor(val) && ('set' in val || 'get' in val)) {
-    return Object.defineProperty(obj, prop, val);
+  if (isDescriptor(val)) {
+    define(obj, key, val);
+    return obj;
   }
 
-  return Object.defineProperty(obj, prop, {
+  define(obj, key, {
     configurable: true,
     enumerable: false,
     writable: true,
     value: val
   });
+
+  return obj;
 };

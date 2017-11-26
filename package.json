@@ -1,6 +1,6 @@
 {
   "name": "define-property",
-  "description": "Define a non-enumerable property on an object.",
+  "description": "Define a non-enumerable property on an object. Uses Reflect.defineProperty when available, otherwise Object.defineProperty.",
   "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/define-property",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
@@ -20,7 +20,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "is-descriptor": "^1.0.1"
+    "is-descriptor": "^1.0.1",
+    "kind-of": "^6.0.1"
   },
   "devDependencies": {
     "gulp-format-md": "^1.0.0",
