@@ -6,6 +6,8 @@ language: node_js
 node_js:
   - node
   - iojs
+  - '9'
+  - '8'
   - '7'
   - '6'
   - '5'
@@ -14,5 +16,6 @@ node_js:
   - '0.12'
   - '0.10'
 matrix:
-  allow_failures: []
+  allow_failures:
+    - node_js: '0.8'
   fast_finish: true

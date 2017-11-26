@@ -1,7 +1,7 @@
 /*!
  * define-property <https://github.com/jonschlinkert/define-property>
  *
- * Copyright (c) 2015, 2017, Jon Schlinkert.
+ * Copyright (c) 2015-2017, Jon Schlinkert.
  * Released under the MIT License.
  */
 
