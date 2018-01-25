@@ -4,6 +4,10 @@
   "version": "2.0.0",
   "homepage": "https://github.com/jonschlinkert/define-property",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Brian Woodward (https://twitter.com/doowb)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)"
+  ],
   "repository": "jonschlinkert/define-property",
   "bugs": {
     "url": "https://github.com/jonschlinkert/define-property/issues"
@@ -20,12 +24,12 @@
     "test": "mocha"
   },
   "dependencies": {
-    "is-descriptor": "^1.0.1",
-    "kind-of": "^6.0.1"
+    "is-descriptor": "^1.0.2",
+    "kind-of": "^6.0.2"
   },
   "devDependencies": {
     "gulp-format-md": "^1.0.0",
-    "mocha": "3.5.3"
+    "mocha": "^3.5.3"
   },
   "keywords": [
     "define",
@@ -40,14 +44,6 @@
     "value"
   ],
   "verb": {
-    "related": {
-      "list": [
-        "assign-deep",
-        "extend-shallow",
-        "merge-deep",
-        "mixin-deep"
-      ]
-    },
     "toc": false,
     "layout": "default",
     "tasks": [
@@ -56,6 +52,14 @@
     "plugins": [
       "gulp-format-md"
     ],
+    "related": {
+      "list": [
+        "assign-deep",
+        "extend-shallow",
+        "merge-deep",
+        "mixin-deep"
+      ]
+    },
     "lint": {
       "reflinks": true
     }
