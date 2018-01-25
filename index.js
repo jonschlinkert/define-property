@@ -1,7 +1,7 @@
 /*!
  * define-property <https://github.com/jonschlinkert/define-property>
  *
- * Copyright (c) 2015-2017, Jon Schlinkert.
+ * Copyright (c) 2015-2018, Jon Schlinkert.
  * Released under the MIT License.
  */
 
@@ -14,8 +14,8 @@ var define = (typeof Reflect !== 'undefined' && Reflect.defineProperty)
   : Object.defineProperty;
 
 module.exports = function defineProperty(obj, key, val) {
-  if (typeOf(obj) !== 'object' && typeof obj !== 'function') {
-    throw new TypeError('expected an object or function');
+  if (typeOf(obj) !== 'object' && typeof obj !== 'function' && !Array.isArray(obj)) {
+    throw new TypeError('expected an object, function, or array');
   }
 
   if (typeof key !== 'string') {
