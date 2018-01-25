@@ -68,11 +68,11 @@ describe('define', function() {
   it('should throw an error when invalid args are passed:', function() {
     assert.throws(function() {
       define(null, 'foo');
-    }, /expected an object or function/);
+    }, /expected an object, function, or array/);
 
     assert.throws(function() {
       define();
-    }, /expected an object or function/);
+    }, /expected an object, function, or array/);
 
     assert.throws(function() {
       define({});
