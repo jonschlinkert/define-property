@@ -56,6 +56,38 @@ describe('define', function() {
     assert.equal(fixture.foo, 'baz');
   });
 
+  it('should define a property on an array', function() {
+    var fixture = [];
+    fixture.bar = 'baz';
+    define(fixture, 'foo', {
+      configurable: true,
+      set: function(key) {
+        define(this, '_val', this[key]);
+      },
+      get: function() {
+        return this._val;
+      }
+    });
+    fixture.foo = 'bar';
+    assert.equal(fixture.foo, 'baz');
+  });
+
+  it('should define a property on an error', function() {
+    var fixture = new Error('fixture error');
+    fixture.bar = 'baz';
+    define(fixture, 'foo', {
+      configurable: true,
+      set: function(key) {
+        define(this, '_val', this[key]);
+      },
+      get: function() {
+        return this._val;
+      }
+    });
+    fixture.foo = 'bar';
+    assert.equal(fixture.foo, 'baz');
+  });
+
   it('should define a property with data descriptors:', function() {
     var obj = {};
     define(obj, 'foo', {
