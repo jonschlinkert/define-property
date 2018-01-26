@@ -7,14 +7,14 @@
 
 'use strict';
 
-var typeOf = require('kind-of');
+var isobject = require('isobject');
 var isDescriptor = require('is-descriptor');
 var define = (typeof Reflect !== 'undefined' && Reflect.defineProperty)
   ? Reflect.defineProperty
   : Object.defineProperty;
 
 module.exports = function defineProperty(obj, key, val) {
-  if (typeOf(obj) !== 'object' && typeof obj !== 'function' && !Array.isArray(obj)) {
+  if (!isobject(obj) && typeof obj !== 'function' && !Array.isArray(obj)) {
     throw new TypeError('expected an object, function, or array');
   }
 
