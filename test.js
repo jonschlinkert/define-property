@@ -29,6 +29,7 @@ describe('define', function() {
     var obj = {bar: 'baz'};
     define(obj, 'foo', {
       configurable: true,
+      enumerable: false,
       get: function() {
         return this._val;
       },
@@ -45,6 +46,7 @@ describe('define', function() {
     fixture.bar = 'baz';
     define(fixture, 'foo', {
       configurable: true,
+      enumerable: false,
       set: function(key) {
         define(this, '_val', this[key]);
       },
@@ -61,6 +63,7 @@ describe('define', function() {
     fixture.bar = 'baz';
     define(fixture, 'foo', {
       configurable: true,
+      enumerable: false,
       set: function(key) {
         define(this, '_val', this[key]);
       },
@@ -77,6 +80,7 @@ describe('define', function() {
     fixture.bar = 'baz';
     define(fixture, 'foo', {
       configurable: true,
+      enumerable: false,
       set: function(key) {
         define(this, '_val', this[key]);
       },
@@ -91,6 +95,8 @@ describe('define', function() {
   it('should define a property with data descriptors:', function() {
     var obj = {};
     define(obj, 'foo', {
+      configurable: false,
+      enumerable: false,
       writable: true,
       value: 'bar'
     });
