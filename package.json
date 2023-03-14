@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "is-descriptor": "^1.0.2",
-    "isobject": "^3.0.1"
+    "isobject": "^4.0.0"
   },
   "devDependencies": {
     "gulp-format-md": "^1.0.0",
